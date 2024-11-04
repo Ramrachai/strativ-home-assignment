@@ -1,4 +1,5 @@
-## A quiz app. 
+## A simple quiz app. 
+### Live Link: (https://nextquiz-flame.vercel.app/)[https://nextquiz-flame.vercel.app/]
 ## Features: 
 - Role based authentication (Admin and User)
 - Signin, Signout
