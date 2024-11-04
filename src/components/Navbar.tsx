@@ -11,18 +11,18 @@ export function NavBar() {
     <nav className="bg-gray-100 text-black py-2 container border-b shadow-sm">
       <div className="max-w-[80%] mx-auto flex justify-between items-center">
         <Link href="/" className="text-xl font-bold">Quiz App</Link>
-        <div>
+        <div className='flex justify-between'>
           {session ? (
             <>
               {session.user?.role === 'admin' && (
                 <Link href="/admin/dashboard" className="mr-4">
-                  <Button variant="ghost">Admin Dashboard</Button>
+                  <Button variant="outline">Dashboard</Button>
                 </Link>
               )}
               <div className='flex gap-2 items-center'>
                 <p className='text-stone-600 text-xs'>{session?.user?.name}</p>
                 <p className='text-stone-500 text-xs'>{session?.user?.email}</p>
-                <Button variant="ghost" onClick={() => signOut()}>Sign Out</Button>
+                <Button variant="default" onClick={() => signOut()}>Sign Out</Button>
               </div>
             </>
           ) : (
