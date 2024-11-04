@@ -41,7 +41,9 @@ export default function Home() {
   const handleAnswer = (direction: 'next' | 'prev') => {
     if (session?.user?.email && currentQuestion) {
       const currentAnswer = selectedAnswers[currentQuestion.id]
-      if (currentAnswer) {
+
+      // Only add or edit answers when moving forward
+      if (direction === 'next' && currentAnswer) {
         const existingAnswer = answers.find(
           (a) => a.questionId === currentQuestion.id && a.userId === session.user.email
         )
@@ -53,22 +55,24 @@ export default function Home() {
             questionId: currentQuestion.id,
             userId: session.user.email,
             answer: currentAnswer,
-
           })
         }
       }
 
+      // Update the current question index based on the direction
       if (direction === 'next') {
         if (currentQuestionIndex < questions.length - 1) {
-          setCurrentQuestionIndex(currentQuestionIndex + 1)
+          setCurrentQuestionIndex((prevIndex) => prevIndex + 1)
         } else {
           setQuizCompleted(true)
         }
-      } else {
-        setCurrentQuestionIndex(Math.max(0, currentQuestionIndex - 1))
+      } else if (direction === 'prev') {
+        setCurrentQuestionIndex((prevIndex) => Math.max(0, prevIndex - 1))
       }
     }
   }
+
+
 
   const calculateScore = () => {
     let score = 0
