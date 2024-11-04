@@ -8,8 +8,8 @@ export function NavBar() {
   const { data: session } = useSession()
 
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gray-100 text-black py-2 container border-b shadow-sm">
+      <div className="max-w-[80%] mx-auto flex justify-between items-center">
         <Link href="/" className="text-xl font-bold">Quiz App</Link>
         <div>
           {session ? (
@@ -19,7 +19,11 @@ export function NavBar() {
                   <Button variant="ghost">Admin Dashboard</Button>
                 </Link>
               )}
-              <Button variant="ghost" onClick={() => signOut()}>Sign Out</Button>
+              <div className='flex gap-2 items-center'>
+                <p className='text-stone-600 text-xs'>{session?.user?.name}</p>
+                <p className='text-stone-500 text-xs'>{session?.user?.email}</p>
+                <Button variant="ghost" onClick={() => signOut()}>Sign Out</Button>
+              </div>
             </>
           ) : (
             <Link href="/signin">

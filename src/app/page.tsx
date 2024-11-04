@@ -107,7 +107,7 @@ export default function Home() {
   if (quizCompleted) {
     const score = calculateScore()
     return (
-      <div className="container mx-auto p-4">
+      <div className="container max-w-md mx-auto p-4">
         <Card>
           <CardHeader>
             <CardTitle>Quiz Completed!</CardTitle>
@@ -126,7 +126,7 @@ export default function Home() {
 
   if (!currentQuestion) {
     return (
-      <div className="container mx-auto p-4">
+      <div className="container mx-auto max-w-sm p-4">
         <Card>
           <CardHeader>
             <CardTitle>No Questions Available</CardTitle>
@@ -140,7 +140,7 @@ export default function Home() {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 max-w-sm">
       <Card>
         <CardHeader>
           <CardTitle>Question {currentQuestionIndex + 1} of {questions.length}</CardTitle>

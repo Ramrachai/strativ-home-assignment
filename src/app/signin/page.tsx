@@ -70,8 +70,16 @@ export default function SignIn() {
         </CardContent>
 
         <CardFooter className='flex justify-between'>
-          <Button size={'sm'} variant={'link'} onClick={() => handleFill("admin")}>admin</Button>
-          <Button size={'sm'} variant={'link'} onClick={() => handleFill("user")}>user</Button>
+          <div className='flex gap-1 flex-col text-xs items-start'>
+            <Button size={'sm'} variant={'link'} onClick={() => handleFill("admin")}>admin</Button>
+            <span> <b>username:</b> admin</span>
+            <span> <b>password:</b> admin1234</span>
+          </div>
+          <div className='flex gap-1 flex-col text-xs items-end'>
+            <Button size={'sm'} variant={'link'} onClick={() => handleFill("user")}>user</Button>
+            <span><b>username:</b> user</span>
+            <span><b>password:</b> user1234</span>
+          </div>
         </CardFooter>
       </Card>
     </div>

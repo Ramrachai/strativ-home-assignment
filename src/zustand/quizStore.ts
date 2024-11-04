@@ -2,14 +2,14 @@ import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
 import { sampleQuestions } from '@/data/sampleQuiz'
 
-interface Question {
+export interface Question {
   id: string
   text: string
   options: string[]
   correctAnswer: string
 }
 
-interface Answer {
+export interface Answer {
   questionId: string
   userId: string
   answer: string
