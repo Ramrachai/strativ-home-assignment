@@ -1,5 +1,5 @@
 ## A simple quiz app. 
-### Live Link: (https://nextquiz-flame.vercel.app/)[https://nextquiz-flame.vercel.app/]
+### Live Link: https://nextquiz-flame.vercel.app/
 
 ## Quick Overview
 
