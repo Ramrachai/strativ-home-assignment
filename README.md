@@ -1,5 +1,12 @@
 ## A simple quiz app. 
 ### Live Link: (https://nextquiz-flame.vercel.app/)[https://nextquiz-flame.vercel.app/]
+
+## Quick Overview
+
+https://github.com/user-attachments/assets/85947a6e-baff-4a2a-b829-965fedc5a2f5
+
+
+
 ## Features: 
 - Role based authentication (Admin and User)
 - Signin, Signout
@@ -7,7 +14,6 @@
 - User has to login to participate in the quiz.
 - Quiz result. After completing all quiz - user can see the final result of correct and incorrect answers
 - Users can go back to previous answered questions to update the answers if the wants.
-
    
 # Technology used: 
   **Framework:** Next.js 15,   
