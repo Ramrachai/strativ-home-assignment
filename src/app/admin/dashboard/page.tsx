@@ -27,7 +27,7 @@ export default function AdminDashboard() {
       editQuestion(newQuestion.id, newQuestion)
       setIsEditing(false)
     } else {
-      addQuestion({ ...newQuestion, id: ID })
+      addQuestion({ ...newQuestion, id: (questions.length + 1).toString() })
     }
     setNewQuestion({ id: '', text: '', options: ['', '', '', ''], correctAnswer: '' })
   }
@@ -43,7 +43,7 @@ export default function AdminDashboard() {
 
       <div className='flex gap-4 justify-center sm:items-start flex-col sm:flex-row'>
         <div>
-          <Card className="mb-4">
+          <Card className="mb-4 min-w-80">
             <CardHeader>
               <CardTitle>{isEditing ? 'Edit Quiz' : 'Add New Quiz'}</CardTitle>
             </CardHeader>
@@ -81,7 +81,7 @@ export default function AdminDashboard() {
         </div>
 
         <div className="space-y-4">
-          {questions.map((question) => (
+          {questions.slice().sort((a,b)=> parseInt(b.id) - parseInt(a.id)).map((question) => (
             <Card key={question.id}>
               <CardHeader>
                 <CardTitle>{question.text}</CardTitle>
