@@ -16,14 +16,14 @@ export function NavBar() {
             <>
               {session.user?.role === 'admin' && (
                 <Link href="/admin/dashboard" className="mr-4">
-                  <Button variant="outline">Dashboard</Button>
+                  <Button variant="outline" >Dashboard</Button>
                 </Link>
               )}
-              <div className='flex gap-2 items-center'>
+              <div className='gap-2 items-center hidden sm:flex mx-2'>
                 <p className='text-stone-600 text-xs'>{session?.user?.name}</p>
                 <p className='text-stone-500 text-xs'>{session?.user?.email}</p>
-                <Button variant="default" onClick={() => signOut()}>Sign Out</Button>
               </div>
+              <Button variant="default" onClick={() => signOut()} >Sign Out</Button>
             </>
           ) : (
             <Link href="/signin">
